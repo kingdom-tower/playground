@@ -12,25 +12,26 @@ jobs:
         run: |
           echo "::set-output name=today::$(date "+%Y/%m/%d")"
 
-      # - name: Create an issue
-      #   uses: actions-ecosystem/action-create-issue@v1
-      #   with:
-      #     github_token: ${{ secrets.PAT_TOKEN }}
-      #     title: ${{ steps.date.outputs.today }}
-      #     body: |
-      #       ## This today's TODO
+      - name: Create an issue
+        uses: actions-ecosystem/action-create-issue@v1
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          title: ${{ steps.date.outputs.today }}
+          body: |
+            ## This today's TODO
 
-      #       - [ ] testing
-      #       - [ ] Check the dashboard
+            - [ ] testing
+            - [ ] Check the dashboard
 
-      #     labels: |
-      #       meeting
-      #       weekly
+          labels: |
+            meeting
+            weekly
+    
       - name: Create Issue
         uses: dacbd/create-issue-action@v1
         with:
           token: ${{ secrets.PAT_TOKEN }}
-          org: kingdom-tower
+          owner: kingdom-tower
           repo: playground-2
           title: ${{ steps.date.outputs.today }}
           body: |
