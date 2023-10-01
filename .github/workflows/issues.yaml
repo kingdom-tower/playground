@@ -37,5 +37,16 @@ jobs:
           body: |
             ## This today's TODO
 
+      - name: Create Issue
+        uses: dacbd/create-issue-action@v1
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          owner: cpanato
+          repo: testing-ci-providers
+          title: ${{ steps.date.outputs.today }}
+          body: |
+            ## This today's TODO
+
+
             - [ ] testing
             - [ ] Check the dashboard
