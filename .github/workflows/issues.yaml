@@ -30,7 +30,7 @@ jobs:
       - name: Create Issue
         uses: dacbd/create-issue-action@v1
         with:
-          token: ${{ secrets.PAT_TOKEN_EXTERNAL }}
+          token: ${{ secrets.PAT_TOKEN }}
           owner: kingdom-tower
           repo: playground-2
           title: ${{ steps.date.outputs.today }}
@@ -40,7 +40,7 @@ jobs:
       - name: Create Issue
         uses: dacbd/create-issue-action@v1
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN_EXTERNAL }}
           owner: cpanato
           repo: testing-ci-private
           title: ${{ steps.date.outputs.today }}
