@@ -42,7 +42,7 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
           owner: cpanato
-          repo: testing-ci-providers
+          repo: testing-ci-private
           title: ${{ steps.date.outputs.today }}
           body: |
             ## This today's TODO
